@@ -2,35 +2,31 @@ package com.projeto.curso.domain.enums;
 
 public enum TipoCliente {
 
-    PESSOAFISICA(1,"Pessoa Fisica"),
-    PESSOAJURIDICA(2,"Pessoa Juridica");
-
+    PESSOAFISICA(1, "Pessoa Física"),
+    PESSOAJURIDICA(2, "Pessoa Jurídica");
     private int cod;
     private String descricao;
-
-    TipoCliente(int codigo, String descricao) {
-        this.cod = codigo;
+    private TipoCliente(int cod, String descricao) {
+        this.cod = cod;
         this.descricao = descricao;
     }
-
     public int getCod() {
         return cod;
     }
-
     public String getDescricao() {
         return descricao;
     }
+    public static TipoCliente toEnum(Integer id) {
 
-    public static TipoCliente toEnum(Integer cod){
-        if (cod == null){
+        if (id == null) {
             return null;
         }
-        for (TipoCliente x : TipoCliente.values()){
-            if (cod.equals(x.getCod())){
+        for (TipoCliente x : TipoCliente.values()) {
+            if (id.equals(x.getCod())) {
                 return x;
             }
         }
-        throw new IllegalArgumentException("Id invalido" + cod);
+        throw new IllegalArgumentException("Id inválido " + id);
     }
-
 }
+

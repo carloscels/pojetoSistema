@@ -1,12 +1,11 @@
 package com.projeto.curso.domain;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -18,7 +17,13 @@ public class Endereco implements Serializable {
     private String compremento;
     private String bairro;
     private String cep;
+
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+    @ManyToOne
+    @JoinColumn(name = "cidade_id")
     private Cidade cidade;
 
 

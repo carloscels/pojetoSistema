@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value ="/clientes")
 public class ClienteResource {
     @Autowired
-    private ClienteService service;
+    private ClienteService serviceCliente;
 
     @RequestMapping(value = "/{id}",method =RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
-        Cliente obj = service.buscar(id);
+        Cliente obj = serviceCliente.buscar(id);
 
         return ResponseEntity.ok().body(obj);
 

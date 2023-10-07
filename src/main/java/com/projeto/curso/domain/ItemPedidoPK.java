@@ -5,7 +5,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
-import java.util.Objects;
+
 
 @Embeddable
 public class ItemPedidoPK implements Serializable {

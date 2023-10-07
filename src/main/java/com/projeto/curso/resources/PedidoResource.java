@@ -1,7 +1,7 @@
 package com.projeto.curso.resources;
 
-import com.projeto.curso.domain.Categoria;
-import com.projeto.curso.services.CategoriaService;
+import com.projeto.curso.domain.Pedido;
+import com.projeto.curso.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value ="/categorias")
-public class CategoriaResource {
+@RequestMapping(value ="/pedidos")
+public class PedidoResource {
     @Autowired
-    private CategoriaService service;
+    private PedidoService pedidoService;
 
     @RequestMapping(value = "/{id}",method =RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
-        Categoria obj = service.buscar(id);
+        Pedido obj = pedidoService.buscar(id);
 
         return ResponseEntity.ok().body(obj);
 

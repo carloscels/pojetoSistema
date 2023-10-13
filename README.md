@@ -30,7 +30,6 @@ pagamento possui um estado (pendente, quitado ou cancelado).
 Pré-requisitos: Java 11
 
 # Autor
-
 Carlos Eduardo Léo Santos
 
 https://www.linkedin.com/in/carlos-eduardo-l%C3%A9o-santos-6b7890170/
